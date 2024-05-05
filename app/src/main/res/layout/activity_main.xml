@@ -28,4 +28,22 @@
         android:textSize="18sp"
         android:layout_centerInParent="true" />
 
+    <Button
+        android:id="@+id/buttonOpenYoutube"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Open YouTube"
+        android:layout_below="@+id/buttonShareImage"
+        android:textSize="18sp"
+        android:layout_centerInParent="true" />
+
+    <Button
+        android:id="@+id/buttonOpenEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Open Email"
+        android:layout_below="@+id/buttonOpenYoutube"
+        android:textSize="18sp"
+        android:layout_centerInParent="true" />
+
 </RelativeLayout>
