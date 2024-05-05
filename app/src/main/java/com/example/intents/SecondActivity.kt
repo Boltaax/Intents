@@ -3,6 +3,7 @@ package com.example.intents
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -12,6 +13,7 @@ class SecondActivity : AppCompatActivity() {
 
     private lateinit var textViewReceivedText: TextView
     private lateinit var imageViewReceivedImage: ImageView
+    private lateinit var buttonReturn: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,6 +21,9 @@ class SecondActivity : AppCompatActivity() {
 
         // Initialize views
         initView()
+
+        // Setup return to Activity 1 button
+        setupReturnButton()
 
         // Retrieve the intent that started this activity
         val receivedIntent = intent
@@ -56,6 +61,7 @@ class SecondActivity : AppCompatActivity() {
     private fun initView() {
         textViewReceivedText = findViewById(R.id.textViewReceivedText)
         imageViewReceivedImage = findViewById(R.id.imageViewReceivedImage)
+        buttonReturn = findViewById(R.id.buttonReturn)
     }
 
     // Function to handle shared text
@@ -95,6 +101,16 @@ class SecondActivity : AppCompatActivity() {
         // Extract the image description from the URI (e.g., file name or path segment)
         // For Google images, you might want to extract the image name or unique identifier
         return uri.lastPathSegment ?: "Image"
+    }
+
+    private fun setupReturnButton() {
+        buttonReturn.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java).apply {
+                action = null
+                type = ""
+            }
+            startActivity(intent)
+        }
     }
 
 }

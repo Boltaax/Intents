@@ -29,6 +29,15 @@
             android:layout_centerInParent="true"
             android:scaleType="centerCrop" />
 
+        <Button
+            android:id="@+id/buttonReturn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imageViewReceivedImage"
+            android:text="Return"
+            android:textSize="18sp"
+            android:layout_centerInParent="true" />
+
     </LinearLayout>
 
 
